@@ -10,9 +10,9 @@
  - that file should be open in a tab above (in Arduino IDE)
  - more instructions are in that file
  
- ////////////////////////////////////////////////
- //////// MaKey MaKey FIRMWARE v1.4 /////////////
- ////////////////////////////////////////////////
+ //////////////////////////////////////////////////
+ ///////// MaKey MaKey FIRMWARE v1.4.1 ////////////
+ //////////////////////////////////////////////////
  by: Eric Rosenbaum, Jay Silver, and Jim Lindblom
  MIT Media Lab & Sparkfun
  start date: 2/16/2012 
@@ -45,6 +45,10 @@
 #define MOUSE_MOVE_LEFT     -3
 #define MOUSE_MOVE_RIGHT    -4
 
+#if (ARDUINO > 10605)
+  #include <Keyboard.h>
+  #include <Mouse.h>
+#endif
 #include "settings.h"
 
 /////////////////////////
@@ -84,7 +88,7 @@ int mouseHoldCount[NUM_INPUTS]; // used to store mouse movement hold data
 // input pin numbers for kickstarter production board
 int pinNumbers[NUM_INPUTS] = {
   12, 8, 13, 15, 7, 6,     // top of makey makey board
-  5, 4, 3, 2, 1, 0,        // left side of female header, KEBYBOARD
+  5, 4, 3, 2, 1, 0,        // left side of female header, KEYBOARD
   23, 22, 21, 20, 19, 18   // right side of female header, MOUSE
 };
 
@@ -531,7 +535,7 @@ void cycleLEDs() {
 
   if ((ledCycleCounter == 0) && inputs[0].pressed) {
     pinMode(inputLED_a, INPUT);
-    digitalWrite(inputLED_a, HIGH);
+    digitalWrite(inputLED_a, LOW);
     pinMode(inputLED_b, OUTPUT);
     digitalWrite(inputLED_b, HIGH);
     pinMode(inputLED_c, OUTPUT);
@@ -594,7 +598,7 @@ void danceLeds()
   {
     // UP
     pinMode(inputLED_a, INPUT);
-    digitalWrite(inputLED_a, HIGH);
+    digitalWrite(inputLED_a, LOW);
     pinMode(inputLED_b, OUTPUT);
     digitalWrite(inputLED_b, HIGH);
     pinMode(inputLED_c, OUTPUT);
@@ -700,6 +704,7 @@ void updateOutLEDs()
     RXLED0;
   }
 }
+
 
 
 

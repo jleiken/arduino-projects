@@ -17,12 +17,12 @@
 int keyCodes[NUM_INPUTS] = {
   // top side of the makey makey board
  
-  MOUSE_MOVE_UP,      // up mouse instead of up arrow pad
-  MOUSE_MOVE_DOWN,    // down mouse instead of down arrow pad
-  MOUSE_MOVE_LEFT,    // left mouse instead of left arrow pad
-  MOUSE_MOVE_RIGHT,  // right mouse instead of right arrow pad
-  MOUSE_LEFT,         // left click instead of space button pad
-  MOUSE_RIGHT,        // right click instead of click button pad
+  KEY_UP_ARROW,      // up arrow pad
+  KEY_DOWN_ARROW,    // down arrow pad
+  KEY_LEFT_ARROW,    // left arrow pad
+  KEY_RIGHT_ARROW,   // right arrow pad
+  ' ',               // space button pad
+  MOUSE_LEFT,        // click button pad
   
   // female header on the back left side
   
@@ -31,16 +31,16 @@ int keyCodes[NUM_INPUTS] = {
   's',                // pin D3
   'd',                // pin D2
   'f',                // pin D1
-  KEY_F8,                // pin D0
+  'g',                // pin D0
   
-  // female header on the back right side SWITCHED WITH FRONT SIDE
+  // female header on the back right side
   
-  KEY_UP_ARROW,      // pin A5 
-  KEY_DOWN_ARROW,    // pin A4
-  KEY_LEFT_ARROW,    // pin A3
-  KEY_RIGHT_ARROW,   // pin A2
-  ' ',         // pin A1
-  'e'         // pin A0
+  MOUSE_MOVE_UP,      // pin A5
+  MOUSE_MOVE_DOWN,    // pin A4
+  MOUSE_MOVE_LEFT,    // pin A3
+  MOUSE_MOVE_RIGHT,   // pin A2
+  MOUSE_LEFT,         // pin A1
+  MOUSE_RIGHT         // pin A0
 };
 
 ///////////////////////////
@@ -87,37 +87,38 @@ int keyCodes[NUM_INPUTS] = {
 - to get modifier keys, function keys, etc 
 
 KEY_LEFT_CTRL
-KEY_LEFT_SHIFT		
-KEY_LEFT_ALT		
-KEY_LEFT_GUI		
-KEY_RIGHT_CTRL		
-KEY_RIGHT_SHIFT		
-KEY_RIGHT_ALT	
-KEY_RIGHT_GUI		
+KEY_LEFT_SHIFT    
+KEY_LEFT_ALT    
+KEY_LEFT_GUI    
+KEY_RIGHT_CTRL    
+KEY_RIGHT_SHIFT   
+KEY_RIGHT_ALT 
+KEY_RIGHT_GUI   
 
-KEY_BACKSPACE		
-KEY_TAB				
-KEY_RETURN			
-KEY_ESC				
-KEY_INSERT			
-KEY_DELETE			
-KEY_PAGE_UP			
-KEY_PAGE_DOWN		
+KEY_BACKSPACE   
+KEY_TAB       
+KEY_RETURN      
+KEY_ESC       
+KEY_INSERT      
+KEY_DELETE      
+KEY_PAGE_UP     
+KEY_PAGE_DOWN   
 KEY_HOME
-KEY_END				
-KEY_CAPS_LOCK	
-	
-KEY_F1				
-KEY_F2				
-KEY_F3				
-KEY_F4				
-KEY_F5				
-KEY_F6				
-KEY_F7				
-KEY_F8				
-KEY_F9				
+KEY_END       
+KEY_CAPS_LOCK 
+  
+KEY_F1        
+KEY_F2        
+KEY_F3        
+KEY_F4        
+KEY_F5        
+KEY_F6        
+KEY_F7        
+KEY_F8        
+KEY_F9        
 KEY_F10
-KEY_F11				
-KEY_F12			
+KEY_F11       
+KEY_F12     
 
 */
+
